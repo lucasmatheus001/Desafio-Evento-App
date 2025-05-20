@@ -199,6 +199,10 @@ php artisan serve
 A aplicação será acessível em :</br>
 FrontEnd - (React com Vite) - ` http://localhost:5173/`</br> 
 Backend - (Laravel API) - ` http://localhost:8000`
+## Imagem da aplicação
+
+![image](https://github.com/user-attachments/assets/2fa0e33f-a6fa-42d0-95a3-6e4f51c0da9c)
+![image](https://github.com/user-attachments/assets/2c00af29-330e-4ca8-8142-3b1d038deed2)
 
 ## Video da aplicação
 
