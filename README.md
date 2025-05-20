@@ -205,4 +205,7 @@ Backend - (Laravel API) - ` http://localhost:8000`
 ![image](https://github.com/user-attachments/assets/2c00af29-330e-4ca8-8142-3b1d038deed2)
 
 ## Video da aplicação
+https://github.com/user-attachments/assets/fb400657-56b2-4308-99ee-b022ca6ad84f
+
+
 
