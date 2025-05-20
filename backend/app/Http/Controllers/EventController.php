@@ -40,7 +40,7 @@ class EventController extends Controller
             'starts_at' => 'required|date',
             'ends_at' => 'required|date|after_or_equal:starts_at',
             'max_subscription' => 'required|integer|min:1',
-            'is_active' => nullable|boolean,
+            'is_active' => 'nullable|boolean',
         ]);
 
         
@@ -147,7 +147,7 @@ class EventController extends Controller
         return response()->json($event);
     }
 
-    // Remove (soft delete) um evento
+    // Remove um evento
     public function destroy($uuid)
     {
         $event = Event::where('uuid_code', $uuid)

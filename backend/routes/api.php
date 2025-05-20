@@ -8,10 +8,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
-// Rota para login (pública)
-// Route::post('/login', [AuthController::class, 'login']);
-// Route::post('/register', [AuthController::class, 'login']);
-
 // Rota para pegar o usuário autenticado
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
