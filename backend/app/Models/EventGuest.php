@@ -19,4 +19,9 @@ class EventGuest extends Model
         return $this->belongsTo(User::class);
     }
 
+    protected $fillable = [
+        'event_id',
+        'user_id',
+    ];
+
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Event extends Model
 {
@@ -30,5 +31,17 @@ class Event extends Model
     {
         return $this->hasMany(EventGuest::class);
     }
-    
+
+    protected static function booted()
+    {
+        static::creating(function ($event) {
+            $event->uuid_code = (string) Str::uuid();
+        });
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'owner_id');
+    }
+        
 }

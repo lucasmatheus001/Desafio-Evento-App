@@ -43,4 +43,25 @@ class EventGuestController extends Controller
 
         return response()->json(['message' => 'Inscrição realizada com sucesso!']);
     }
+
+    public function unsubscribe($uuid)
+    {
+        $user = auth()->user();
+
+        $event = Event::where('uuid_code', $uuid)
+            ->where('is_active', true)
+            ->firstOrFail();
+
+        $subscription = EventGuest::where('user_id', $user->id)
+            ->where('event_id', $event->id)
+            ->first();
+
+        if (!$subscription) {
+            return response()->json(['message' => 'Usuário não está inscrito neste evento.'], 404);
+        }
+
+        $subscription->delete();
+
+        return response()->json(['message' => 'Inscrição cancelada com sucesso!']);
+    }
 }
